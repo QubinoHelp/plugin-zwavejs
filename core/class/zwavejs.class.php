@@ -123,6 +123,10 @@ class zwavejs extends eqLogic {
 	}
 	
 	public static function cronHourly() {
+		$deamon_info = self::deamon_info();
+		if ($deamon_info['state'] != 'ok') {
+			return;
+		}
 		self::getNodes('health');
 	}
 
@@ -161,7 +165,11 @@ class zwavejs extends eqLogic {
 		$settings['zwave']['logEnabled'] = true;
 		$settings['zwave']['logToFile'] = false;
 		$settings['zwave']['serverEnabled'] = false;
-		$settings['zwave']['enableSoftReset'] = true;
+		if (config::byKey('softReset', __CLASS__,1) == 1){
+			$settings['zwave']['enableSoftReset'] = true;
+		} else {
+			$settings['zwave']['enableSoftReset'] = false;
+		}
 		$settings['zwave']['disclaimerVersion'] = 1;
 		$settings['zwave']['enableStatistics'] = false;
 		$settings['zwave']['deviceConfigPriorityDir'] = realpath(dirname(__FILE__) . '/../config/config');
@@ -219,6 +227,17 @@ class zwavejs extends eqLogic {
 		}
 		$data = json_decode(file_get_contents($file), true);
 		return $data;
+	}
+
+	public static function additionnalDependancyCheck() {
+		$return = array();
+		$return['state'] = 'ok';
+		if (config::byKey('lastDependancyInstallTime', __CLASS__) == '') {
+			$return['state'] = 'nok';
+		} else if (!file_exists(__DIR__ . '/../../resources/zwave-js-ui/node_modules')) {
+			$return['state'] = 'nok';
+		}
+		return $return;
 	}
 
 	public static function dependancy_info() {

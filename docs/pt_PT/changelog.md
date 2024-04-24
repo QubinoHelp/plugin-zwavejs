@@ -4,6 +4,59 @@
 >
 >Se não houver informação sobre a atualização, significa que se trata apenas da atualização da documentação, tradução ou texto.
 
+# 27/02/2024
+
+**Melhorias**
+
+- Adição de uma função adicionalDependancyCheck para o núcleo
+
+
+**Alterações de configuração**
+
+- Mudando a configuração *MCOhome Mh7h* para usar as propriedades
+
+# 26/12/2023
+
+**Melhorias**
+
+- Adicionada uma opção para ativar ou desativar o *Reinicialização suave*
+- Mudar para a versão *9.6.2* por ZwaveJsUI 
+
+**Adições de configuração**
+
+- Configuração adicionada *HeatIt Z-TRM6* (propriedades : Temperatura, ThermostatMode, ThermostatOperatingState, ThermostatModeAction, ThermostatSetpoint, Notificação do sensor de calor, Notificação de sobrecarga)
+- Configuração adicionada *Botão Sunricher de controle remoto 12* (propriedades : CentralScene x12, Bateria)
+
+# 12/11/2023
+
+**Melhorias**
+
+- Mudar para a versão *9.5.1* do ZwaveJsUI (para poder escolher uma porta no formato de caminho necessário em determinadas VMs você deve atualizar o núcleo)
+
+**Conserta**
+
+- Correção inclui bug *S2* corrigido no lado da UI do ZwaveJS a seguir aumentou (na verdade, os retornos de chamada não eram feitos a menos que você tivesse uma janela aberta na interface da UI do ZwaveJS)
+
+**Adições de configuração**
+
+- Configuração adicionada *Shelly Qubino Onda 13h* (propriedades : Interruptor, alimentação, energia, notificação de rede elétrica, notificação de sobrecorrente, notificação de sensor de calor)
+- Configuração adicionada *Shelly Qubino Onda 1* (propriedades : Interruptor, alimentação, energia, notificação de rede elétrica, notificação de sobrecorrente, notificação de sensor de calor)
+- Configuração adicionada *Obturador de ondas Shelly Qubino* (propriedades : Obturador, alimentação, energia, notificação manual, notificação de sobrecorrente, notificação de sensor de calor)
+- Configuração adicionada *Shelly Qubino Onda 14h* (propriedades : Interruptor, alimentação, energia, notificação de rede elétrica, notificação de sobrecorrente, notificação de sensor de calor)
+- Configuração adicionada *Shelly Qubino Onda 1* (propriedades : Interruptor, notificação de mãos, notificação de sobrecorrente, notificação de sensor de calor)  *duvido se devo adicionar Potência e Energia (faça um ticket se o dispositivo deveria informar consumo, mas acho que não)*
+- Adicionando uma propriedade *Cobertura de janelas*
+
+**Alterações de configuração**
+
+- Mudando a configuração *Teclado Benex* usar as propriedades (cópia do Zipato mas na próxima versão)
+- Mudando a configuração *MCOhome Mh8FC* para usar as propriedades
+- Mudando a configuração *MCOhome Mh8FC-4* para usar as propriedades
+- Mudando a configuração *Qubino ZMNKID - Termostato de descarga OnOff 2* para usar as propriedades
+- Mudando a configuração *Motor com fio Widom Meta* para usar a propriedade Windows Covering
+- Mudando a configuração *Wenzhou TZ78* uso do endpoint 0 no lugar do endpoint 1 (de acordo com o feedback dos usuários)
+- Editando a imagem *MCOhome Mh8FC* (recorte)
+- Editando a imagem *MCOhome Mh8FC-4* (recorte)
+
 # 27/10/2023
 
 **Adições de configuração**
@@ -93,7 +146,7 @@
 - Adição de um gráfico *Rota de rede* representando as últimas rotas tomadas (irá escalar e pode não lidar com todos os casos depende do SDK do controlador)
 - Adição de uma mensagem no centro de mensagens quando um nó fica inoperante (além do comando de status do equipamento)
 - Adição de uma mensagem no centro de mensagens quando um nó fica Alive depois de Morto (além do comando de status do equipamento)
-- Adição de uma mensagem no centro de mensagens quando um nó não acordou após 4 vezes seu intervalo de ativação 
+- Adição de uma mensagem no centro de mensagens quando um nó não acordou após 4 vezes seu intervalo de ativação
 
 
 **Adições de configuração**
@@ -425,7 +478,7 @@
 
 **Melhorias**
 
-- Gestão *comandos sem unidades* enquanto deveria (no retorno do zwaveJS) para não poluir o log 
+- Gestão *comandos sem unidades* enquanto deveria (no retorno do zwaveJS) para não poluir o log
 
 **Alterações de configuração**
 
@@ -488,7 +541,7 @@
 
 - Adição de um *Gerenciamento de versão da interface do usuário do ZwaveJS*
 - Adição de uma mensagem no *centro de mensagens* e na página do plugin quando ZwaveJS UI *precisa ser atualizado*
-- Passagem do *Versão da IU do ZwaveJS* para versão *8.5.1* 
+- Passagem do *Versão da IU do ZwaveJS* para versão *8.5.1*
 
 **Alterações de configuração**
 

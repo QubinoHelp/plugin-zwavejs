@@ -4,6 +4,59 @@
 >
 >Wenn es keine Informationen über die Aktualisierung gibt, bedeutet dies, dass es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text handelt.
 
+# 27.02.2024
+
+**Verbesserungen**
+
+- Hinzufügung einer zusätzlichenDependancyCheck-Funktion für den Kern
+
+
+**Konfigurationsänderungen**
+
+- Ändern der Konfiguration *MCOhome Mh7h* um die Eigenschaften zu verwenden
+
+# 26.12.2023
+
+**Verbesserungen**
+
+- Option zum Aktivieren oder Deaktivieren hinzugefügt *Soft-Reset*
+- Zur Version wechseln *9.6.2* von ZwaveJsUI 
+
+**Konfigurationsergänzungen**
+
+- Konfig hinzugefügt *HeatIt Z-TRM6* (Eigenschaften : Temperatur, ThermostatMode, ThermostatOperatingState, ThermostatModeAction, ThermostatSetpoint, Wärmesensorbenachrichtigung, Überlastbenachrichtigung)
+- Konfig hinzugefügt *Sunricher Fernbedienung 12 Tasten* (Eigenschaften : CentralScene x12, Batterie)
+
+# 12.11.2023
+
+**Verbesserungen**
+
+- Zur Version wechseln *9.5.1* von ZwaveJsUI (um einen Port im Pfadformat auswählen zu können, der auf bestimmten VMs erforderlich ist, müssen Sie den Kern aktualisieren)
+
+**Behebt**
+
+- Behebung des Include-Fehlers *S2* Auf der Seite der ZwaveJS-Benutzeroberfläche wurde Folgendes korrigiert: (Tatsächlich wurden die Rückrufe nicht durchgeführt, es sei denn, Sie hatten ein Fenster auf der ZwaveJS-Benutzeroberfläche geöffnet)
+
+**Konfigurationsergänzungen**
+
+- Konfig hinzugefügt *Shelly Qubino Wave 13:00 Uhr* (Eigenschaften : Schalter, Stromversorgung, Energie, Netzbenachrichtigung, Überstrombenachrichtigung, Wärmesensorbenachrichtigung)
+- Konfig hinzugefügt *Shelly Qubino Welle 1* (Eigenschaften : Schalter, Stromversorgung, Energie, Netzbenachrichtigung, Überstrombenachrichtigung, Wärmesensorbenachrichtigung)
+- Konfig hinzugefügt *Shelly Qubino Wave Shutter* (Eigenschaften : Verschluss, Stromversorgung, Energie, Zeigerbenachrichtigung, Überstrombenachrichtigung, Wärmesensorbenachrichtigung)
+- Konfig hinzugefügt *Shelly Qubino Wave 14:00 Uhr* (Eigenschaften : Schalter, Stromversorgung, Energie, Netzbenachrichtigung, Überstrombenachrichtigung, Wärmesensorbenachrichtigung)
+- Konfig hinzugefügt *Shelly Qubino Welle 1* (Eigenschaften : Schalter, Zeigerbenachrichtigung, Überstrombenachrichtigung, Wärmesensorbenachrichtigung)  *Zweifel, ob Strom und Energie hinzugefügt werden sollen (machen Sie ein Ticket, wenn das Gerät den Verbrauch melden soll, aber ich glaube nicht)*
+- Hinzufügen einer Eigenschaft *Fensterverkleidung*
+
+**Konfigurationsänderungen**
+
+- Ändern der Konfiguration *Benext-Tastatur* um die Eigenschaften zu nutzen (Kopie von Zipato, aber in der Benext-Version))
+- Ändern der Konfiguration *MCOhome Mh8FC* um die Eigenschaften zu verwenden
+- Ändern der Konfiguration *MCOhome Mh8FC-4* um die Eigenschaften zu verwenden
+- Ändern der Konfiguration *Qubino ZMNKID – Flush OnOff Thermostat 2* um die Eigenschaften zu verwenden
+- Ändern der Konfiguration *Widom Meta-Kabelmotor* , um die Windows-Abdeckungseigenschaft zu verwenden
+- Ändern der Konfiguration *Wenzhou TZ78* Verwendung von Endpunkt 0 anstelle von Endpunkt 1 (gemäß Rückmeldung von Benutzern))
+- Bearbeiten des Bildes *MCOhome Mh8FC* (Ausschnitt)
+- Bearbeiten des Bildes *MCOhome Mh8FC-4* (Ausschnitt)
+
 # 27.10.2023
 
 **Konfigurationsergänzungen**
@@ -93,7 +146,7 @@
 - Hinzufügen eines Diagramms *Netzwerkroute* Stellt die zuletzt genommenen Routen dar (wird skaliert und kann möglicherweise nicht alle Fälle verarbeiten, abhängig vom Controller-SDK)
 - Hinzufügen einer Nachricht im Nachrichtencenter, wenn ein Knoten ausfällt (zusätzlich zum Gerätestatusbefehl))
 - Hinzufügen einer Nachricht im Nachrichtencenter, wenn ein Knoten aktiv wird, nachdem er tot ist (zusätzlich zum Gerätestatusbefehl))
-- Hinzufügen einer Nachricht im Nachrichtencenter, wenn ein Knoten nach dem 4-fachen seines Weckintervalls nicht aufgewacht ist 
+- Hinzufügen einer Nachricht im Nachrichtencenter, wenn ein Knoten nach dem 4-fachen seines Weckintervalls nicht aufgewacht ist
 
 
 **Konfigurationsergänzungen**
@@ -425,7 +478,7 @@
 
 **Verbesserungen**
 
-- Management *Befehle ohne Einheiten* während es (in der zwaveJS-Rückgabe) sollte, um das Protokoll nicht zu verschmutzen 
+- Management *Befehle ohne Einheiten* während es (in der zwaveJS-Rückgabe) sollte, um das Protokoll nicht zu verschmutzen
 
 **Konfigurationsänderungen**
 
@@ -488,7 +541,7 @@
 
 - Ergänzung von a *Versionsverwaltung der ZwaveJS-Benutzeroberfläche*
 - Hinzufügen einer Nachricht in der *Nachrichtenzentrum* und auf der Plugin-Seite, wenn ZwaveJS UI *muss aktualisiert werden*
-- Durchgang der *ZwaveJS-UI-Version* zu Version *8.5.1* 
+- Durchgang der *ZwaveJS-UI-Version* zu Version *8.5.1*
 
 **Konfigurationsänderungen**
 
