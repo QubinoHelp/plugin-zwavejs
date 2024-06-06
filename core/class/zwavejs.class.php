@@ -146,6 +146,8 @@ class zwavejs extends eqLogic {
 		self::isValidKey(config::byKey('s2key_access', __CLASS__, '')) ? true : config::save('s2key_access', self::generateRandomKey(), __CLASS__);
 		self::isValidKey(config::byKey('s2key_unauth', __CLASS__, '')) ? true : config::save('s2key_unauth', self::generateRandomKey(), __CLASS__);
 		self::isValidKey(config::byKey('s2key_auth', __CLASS__, '')) ? true : config::save('s2key_auth', self::generateRandomKey(), __CLASS__);
+		self::isValidKey(config::byKey('s2key_auth_long', __CLASS__, '')) ? true : config::save('s2key_auth_long', self::generateRandomKey(), __CLASS__);
+		self::isValidKey(config::byKey('s2key_access_long', __CLASS__, '')) ? true : config::save('s2key_access_long', self::generateRandomKey(), __CLASS__);
 		self::isValidKey(config::byKey('s0key', __CLASS__, '')) ? true : config::save('s0key', self::generateRandomKey(), __CLASS__);
 
 		$settings['mqtt']['name'] = 'Jeedom';
@@ -178,6 +180,10 @@ class zwavejs extends eqLogic {
 			'S0_Legacy' => config::byKey('s0key', __CLASS__),
 			'S2_Unauthenticated' => config::byKey('s2key_unauth', __CLASS__),
 			'S2_Authenticated' => config::byKey('s2key_auth', __CLASS__)
+		);
+		$settings['zwave']['securityKeysLongRange'] = array(
+			'S2_AccessControl' => config::byKey('s2key_access_long', __CLASS__),
+			'S2_Authenticated' => config::byKey('s2key_auth_long', __CLASS__)
 		);
 
 		$settings['gateway']['type'] = 0;
@@ -261,10 +267,15 @@ class zwavejs extends eqLogic {
 			$return['state'] = 'ok';
 		}
 		$port = config::byKey('port', __CLASS__);
-		$port = jeedom::getUsbMapping($port);
-		if (@!file_exists($port)) {
-			$return['launchable'] = 'nok';
-			$return['launchable_message'] = __("Le port n'est pas configuré", __FILE__);
+		if ($port == 'none') {
+		      $return['launchable'] = 'nok';
+		      $return['launchable_message'] = __("Le port n'est pas configuré", __FILE__);
+		}else{
+			$port = jeedom::getUsbMapping($port);
+			if (is_array($port) || @!file_exists($port)) {
+				$return['launchable'] = 'nok';
+				$return['launchable_message'] = __("Le port n'est pas configuré", __FILE__);
+			}
 		}
 		if (!class_exists('mqtt2')) {
 			$return['launchable'] = 'nok';
